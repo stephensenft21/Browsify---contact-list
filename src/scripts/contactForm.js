@@ -1,7 +1,7 @@
 //function to build form
 import handler from "./eventHandler"
-import ContactCollection from "./contactCollection";
-const buildForm = {
+
+export default {
     buildFormHTML: () => {
         const nameLabel = document.createElement("label")
 
@@ -43,9 +43,9 @@ const buildForm = {
 
 
 
-        const formContainer = document.querySelector(".display-container")
+        const formContainer = document.querySelector("#form-container")
         formContainer.appendChild(formSectionElement)
-    },
+    }
     /*addNewContact: () => {
         const contactName = document.querySelector("#name")
         const contactNumber = document.querySelector("#number")
@@ -61,4 +61,3 @@ const buildForm = {
     }*/
 }
 
-export default buildForm

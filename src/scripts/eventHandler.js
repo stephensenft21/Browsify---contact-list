@@ -1,5 +1,5 @@
-import contacts from "./ContactForm"
-
+import Contactlist from "./Contactlist"
+import contactCollection from "./contactCollection"
 export default  {
     saveButtonHandler:() => {
         //   console.log(event.target.value)
@@ -16,7 +16,23 @@ export default  {
                 address: contactAddress.value
             }
             console.log(newContact)
-            POSTcontact.
-        }
+            contactCollection.POSTcontact(newContact)
+             .then(() => {
+                 const displayContainer = document.querySelector("#display-container")
+                 while(displayContainer.firstChild){
+                     displayContainer.removeChild(displayContainer.firstChild)
+                 }
+                 contactName.value = ""
+                 contactNumber.value = ""
+                 contactAddress.value = ""
+             })
+             .then(Contactlist.listAllContacts)
+        
+        },
 
+      
     }
+    
+
+
+    //look up syntax for post request 

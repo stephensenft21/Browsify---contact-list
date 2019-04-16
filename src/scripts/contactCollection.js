@@ -5,7 +5,7 @@ export default {
         .then(response => response.json())
     },
     POSTcontact: (contact) => {
-        return fetch ("http:localhost:8088/contactList",{
+        return fetch ("http://localhost:8088/contactList",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
